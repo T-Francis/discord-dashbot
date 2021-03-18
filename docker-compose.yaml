@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  # discord bot
+  discord.dashbot:
+    container_name: discord.dashbot
+    image: aliart/discord.dashbot:1.0
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+      args:
+        DOCKER_UID: ${DOCKER_UID}
+        DOCKER_GID: ${DOCKER_GID}
+        NODE_ENV: ${NODE_ENV}
+        USERNAME: ${USERNAME}
+    volumes:
+      - ./:/app/
+    networks:
+      - discord-dashbot
+      - web
+    ports:
+      - ${PORT}:${PORT}
+
+networks:
+  discord-dashbot:
+    external:
+      name: ${NETWORKS_SELF}
+  web:
+    external:
+      name: ${NETWORKS_WEB}

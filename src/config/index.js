@@ -14,9 +14,9 @@ module.exports = {
 	debug: valueNull(process.env.DEBUG_LOG, false),
 	pmmessage: false,
 	webAdmin: {
-		enabled: process.env.WEBADMIN || true,
+		enabled: process.env.WEBADMIN || false,
 		apiKeys: [],
-		port: 8898
+		port: process.env.PORT
 	},
 	discord: {
 		appId: process.env.DISCORD_APPID || "",

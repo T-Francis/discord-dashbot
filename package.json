@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"Running Bot\" && forever index.js"
+    "start": "echo \"Running Bot\" && forever index.js",
+    "dev": "echo \"Running Bot in dev mode\" && nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -38,5 +39,8 @@
     "forever": "^1.0.0",
     "lodash": "^4.17.15",
     "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.0"
   }
 }
